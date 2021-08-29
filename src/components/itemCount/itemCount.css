@@ -1,0 +1,14 @@
+.botonContador {
+  background-color: rgb(61, 193, 236);
+  border-style: none;
+  width: 2rem;
+  display: inline-flex;
+  justify-content: center;
+  margin: 2rem;
+}
+label {
+  margin: 2rem;
+}
+.contador {
+  text-align: center;
+}

@@ -1,0 +1,62 @@
+[
+    {
+      "gameID": 1,
+      "img": "https://cdn.cloudflare.steamstatic.com/steam/apps/292030/header.jpg?t=1621939214",
+      "name": "The Witcher 3: Wild Hunt",
+      "price": "ARS $479.99",
+      "platform": "PC",
+      "description":
+        "Mientras la guerra se extiende por los Reinos del Norte, aceptarás el contrato de tu vida: encontrar a la niña de la profecía, un arma viviente que puede alterar el mundo tal y como lo conocemos.",
+      "stock": 7
+    },
+    {
+      "gameID": 2,
+      "img": "https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/header.jpg?t=1618851907",
+      "name": "Red Dead Redemption 2",
+      "price": "ARS $2499,99",
+      "platform": "PC",
+      "description":
+        "Con más de 175 premios al Juego del año y más de 250 valoraciones perfectas, Red Dead Redemption 2 es la épica historia de Arthur Morgan y la banda de Van der Linde, que huyen por Estados Unidos en los albores del siglo XX. También incluye acceso al mundo multijugador compartido de Red Dead Online.",
+      "stock": 10
+    },
+    {
+      "gameID": 3,
+      "img": "https://cdn.cloudflare.steamstatic.com/steam/apps/582010/header.jpg?t=1623978557",
+      "name": "Monster Hunter: World",
+      "price": "ARS $1299,99",
+      "platform": "PC",
+      "description":
+        "¡Bienvenidos a un nuevo mundo! En Monster Hunter: World, la última entrega de la serie, podrás disfrutar de la mejor experiencia de juego, usando todos los recursos a tu alcance para acechar monstruos en un nuevo mundo rebosante de emociones y sorpresas.",
+      "stock": 3
+    },
+    {
+      "gameID": 4,
+      "img": "https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/header.jpg?t=1621944801",
+      "name": "CyberPunk 2077",
+      "price": "ARS $2199,00",
+      "platform": "PC",
+      "description":
+        "Cyberpunk 2077 es una historia de acción y aventuras en mundo abierto ambientada en Night City, una megalópolis obsesionada con el poder, el glamur y la modificación corporal. Te pondrás en la piel de V, un mercenario que persigue un implante único: el secreto de la inmortalidad.",
+      "stock": 8
+    },
+    {
+      "gameID": 5,
+      "img": "https://cdn.cloudflare.steamstatic.com/steam/apps/1506830/header.jpg?t=1628768322",
+      "name": "FIFA 22",
+      "price": "ARS $3599,00",
+      "platform": "PC",
+      "description":
+        "Powered by Football™, EA SPORTS™ FIFA 22 acorta las distancias aún más con lo que sucede en la vida real gracias a los avances en la jugabilidad básica y a nuevas características innovadoras en todos los modos.",
+      "stock": 11
+    },
+    {
+      "gameID": 6,
+      "img": "https://cdn.cloudflare.steamstatic.com/steam/apps/924970/header.jpg?t=1629155602",
+      "name": "Back4Blood",
+      "price": "ARS $3999,00",
+      "platform": "PC",
+      "description":
+        "Back 4 Blood es un emocionante juego de disparos en primera persona cooperativo, de los creadores de la aclamada franquicia de Left 4 Dead.",
+      "stock": 4
+    }
+]
