@@ -27,3 +27,14 @@ span {
   font-family: "Roboto", sans-serif;
   font-weight: 700;
 }
+
+button {
+  display: inline-flex;
+  justify-content: center;
+  margin: 2rem;
+  width: 5rem;
+}
+
+#link {
+  color: black;
+}
