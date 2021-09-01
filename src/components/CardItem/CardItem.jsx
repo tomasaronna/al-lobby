@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, Image } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
-import ItemCount from "../itemCount/itemCount";
+import { Link } from "react-router-dom";
 import "./CardItem.css";
 
 const CardItem = ({ data }) => {
@@ -23,7 +23,12 @@ const CardItem = ({ data }) => {
         <Card.Description>
           <span>Stock: {data.stock}</span>
         </Card.Description>
-        <ItemCount stock={data.stock} />
+
+        <button>
+          <Link to={`/detail/${data.gameID}`} id="link">
+            Ver más
+          </Link>
+        </button>
       </Card>
     </div>
   );
