@@ -1,19 +1,33 @@
 import React, { useState, useEffect } from "react";
 import CardItem from "../CardItem/CardItem";
+import { query, collection, getDocs } from "firebase/firestore";
+import db from "../Firebase/Firebase";
 
 const ItemListContainer = () => {
   const [juegos, setJuegos] = useState([]);
+  console.log(juegos);
+  const data = [];
+  const getDatos = async () => {
+    const datos = query(collection(db, "games"));
+
+    const querySnapshot = await getDocs(datos);
+    querySnapshot.forEach((datos) => {
+      data.push({ ...datos.data, id: datos.id });
+    });
+    setJuegos(data);
+  };
   useEffect(() => {
-    fetch("https://mocki.io/v1/604b55c7-678e-4c04-8e3e-abe9ccbfee31")
-      .then((response) => response.json())
-      .then((data) => setJuegos(data));
+    getDatos();
   }, []);
   return (
     <div>
       {juegos.map((juego) => {
-        return <CardItem key={juego.gameID} data={juego} />;
+        return (
+          <div>
+            <CardItem key={juego.id} data={juego} />
+          </div>
+        );
       })}
-      ;
     </div>
   );
 };

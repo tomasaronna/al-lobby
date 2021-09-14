@@ -10,7 +10,7 @@ const CardItem = ({ data }) => {
       <Card>
         <Card.Content>
           <Image src={data.img} alt="Wallpaper del juego" />
-          <Card.Header id="title">{data.name}</Card.Header>
+          <Card.Header id="title">{data.title}</Card.Header>
           <Card.Meta id="info">{data.platform}</Card.Meta>
           <Card.Meta id="info">{data.price}</Card.Meta>
           <Card.Description id="descripcion">
