@@ -12,7 +12,7 @@ const ItemListContainer = () => {
 
     const querySnapshot = await getDocs(datos);
     querySnapshot.forEach((datos) => {
-      data.push({ ...datos.data, id: datos.id });
+      data.push({ ...datos.data(), id: datos.id });
     });
     setJuegos(data);
   };
