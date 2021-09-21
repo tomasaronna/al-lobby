@@ -1,6 +1,6 @@
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
-import ItemListContainer from "./components/itemListContainer/ItemListContainer";
+import ItemListContainer from "./components/itemListContainer/itemListContainer";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Inicio from "./components/Views/Inicio";
 import AcercaDe from "./components/Views/Acerca-de";
