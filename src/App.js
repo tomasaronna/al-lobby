@@ -16,7 +16,7 @@ const App = () => {
           <Route path="/inicio" exact component={Inicio} />
           <Route path="/acerca-de" component={AcercaDe} />
           <Route path="/contacto" component={Contacto} />
-          <Route path="/detail/:id" component={ItemDetail} />
+          <Route path="/detalle/:id" component={ItemDetail} />
           <section className="recomendados">
             <ItemListContainer />
           </section>
