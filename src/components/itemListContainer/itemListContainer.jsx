@@ -23,8 +23,8 @@ const ItemListContainer = () => {
     <div>
       {juegos.map((juego) => {
         return (
-          <div>
-            <CardItem key={juego.id} data={juego} />
+          <div key={juego.id}>
+            <CardItem data={juego} />
           </div>
         );
       })}
