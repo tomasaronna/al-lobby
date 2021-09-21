@@ -25,7 +25,7 @@ const CardItem = ({ data }) => {
         </Card.Description>
 
         <button>
-          <Link to={`/detail/${data.gameID}`} id="link">
+          <Link to={`/detalle/${data.id}`} id="link">
             Ver más
           </Link>
         </button>
