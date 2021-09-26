@@ -6,22 +6,27 @@ import Inicio from "./components/Views/Inicio";
 import AcercaDe from "./components/Views/Acerca-de";
 import Contacto from "./components/Views/Contacto";
 import ItemDetail from "./components/Views/itemDetail/itemDetail";
+import CartWidget from "./components/CartWidget/cartWidget";
+import { GameProvider } from "./components/cartContext/cartContext";
 
 const App = () => {
   return (
     <Router>
-      <div className="body">
-        <NavBar />
-        <Switch>
-          <Route path="/inicio" exact component={Inicio} />
-          <Route path="/acerca-de" component={AcercaDe} />
-          <Route path="/contacto" component={Contacto} />
-          <Route path="/detalle/:id" component={ItemDetail} />
-          <section className="recomendados">
-            <ItemListContainer />
-          </section>
-        </Switch>
-      </div>
+      <GameProvider>
+        <div className="body">
+          <NavBar />
+          <Switch>
+            <Route path="/inicio" exact component={Inicio} />
+            <Route path="/acerca-de" component={AcercaDe} />
+            <Route path="/contacto" component={Contacto} />
+            <Route path="/detalle/:id" component={ItemDetail} />
+            <Route path="/carrito" component={CartWidget} />
+            <section className="recomendados">
+              <ItemListContainer />
+            </section>
+          </Switch>
+        </div>
+      </GameProvider>
     </Router>
   );
 };
