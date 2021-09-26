@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { cartContext } from "../cartContext/cartContext";
 import "./itemCount.css";
 
 const ItemCount = ({ stock }) => {
   var [cantidad, setCantidad] = React.useState(0);
+  const { addGame } = useContext(cartContext);
 
   const contadorSuma = (stock) => {
     if (cantidad < stock) {
@@ -24,7 +26,7 @@ const ItemCount = ({ stock }) => {
       <button onClick={() => contadorSuma(stock)} className="mas botonContador">
         +
       </button>
-      <button>Añadir al carrito</button>
+      <button onClick={addGame()}>Añadir al carrito</button>
     </div>
   );
 };
