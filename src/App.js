@@ -6,7 +6,7 @@ import Inicio from "./components/Views/Inicio";
 import AcercaDe from "./components/Views/Acerca-de";
 import Contacto from "./components/Views/Contacto";
 import ItemDetail from "./components/Views/itemDetail/itemDetail";
-import CartWidget from "./components/CartWidget/cartWidget";
+import cartWidget from "./components/Views/cartWidget/cartWidget";
 import { GameProvider } from "./components/cartContext/cartContext";
 
 const App = () => {
@@ -20,7 +20,7 @@ const App = () => {
             <Route path="/acerca-de" component={AcercaDe} />
             <Route path="/contacto" component={Contacto} />
             <Route path="/detalle/:id" component={ItemDetail} />
-            <Route path="/carrito" component={CartWidget} />
+            <Route path="/carrito" component={cartWidget} />
             <section className="recomendados">
               <ItemListContainer />
             </section>
