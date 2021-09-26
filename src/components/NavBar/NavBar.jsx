@@ -32,7 +32,9 @@ const NavBar = () => {
             Contacto
           </NavLink>
         </Nav.Item>
-        <FontAwesomeIcon icon={faShoppingCart} className="cartIcon" />
+        <NavLink to="/carrito">
+          <FontAwesomeIcon icon={faShoppingCart} className="cartIcon" />
+        </NavLink>
       </Nav>
     </div>
   );
