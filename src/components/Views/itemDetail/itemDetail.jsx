@@ -25,7 +25,7 @@ const ItemDetail = () => {
   useEffect(() => {
     getDetail();
   }, [id]);
-
+  console.log("DATA", selectedGame.stock);
   return (
     <>
       <div className="main">
@@ -41,7 +41,7 @@ const ItemDetail = () => {
         <p>{selectedGame.gameInfo}</p>
       </div>
       <h3>Stock: {selectedGame.stock}</h3>
-      <ItemCount />
+      <ItemCount stock={selectedGame.stock} />
     </>
   );
 };
