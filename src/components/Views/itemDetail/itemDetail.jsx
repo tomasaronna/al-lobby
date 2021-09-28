@@ -41,7 +41,7 @@ const ItemDetail = () => {
         <p>{selectedGame.gameInfo}</p>
       </div>
       <h3>Stock: {selectedGame.stock}</h3>
-      <ItemCount stock={selectedGame.stock} />
+      <ItemCount stock={selectedGame.stock} data={selectedGame} />
     </>
   );
 };
