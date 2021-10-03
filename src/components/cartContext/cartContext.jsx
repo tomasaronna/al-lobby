@@ -4,6 +4,7 @@ export const cartContext = createContext();
 
 export const GameProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
+  const [cartQty, setCartQty] = useState();
 
   const addGame = (title, platform, qty, price) => {
     const existingGame = cart.findIndex((game) => game.title === title);
@@ -37,7 +38,9 @@ export const GameProvider = ({ children }) => {
   };
 
   return (
-    <cartContext.Provider value={{ addGame, removeGame, cart, setCart }}>
+    <cartContext.Provider
+      value={{ addGame, removeGame, cart, setCart, setCartQty, cartQty }}
+    >
       {children}
     </cartContext.Provider>
   );
