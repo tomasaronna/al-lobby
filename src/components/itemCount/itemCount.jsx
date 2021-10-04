@@ -7,15 +7,17 @@ const ItemCount = ({ stock, data }) => {
   const { addGame } = useContext(cartContext);
   const { setCartQty } = useContext(cartContext);
 
-  const contador = (stock) => {
+  const contadorSuma = (stock) => {
     if (cantidad < stock) {
       setCantidad(cantidad + 1);
       setCartQty(cantidad);
-    } else if (cantidad > 0) {
+    }
+  };
+  const contadorResta = () => {
+    if (cantidad > 0) {
       setCantidad(cantidad - 1);
       setCartQty(cantidad);
     }
-    debugger;
   };
 
   const functionTrigger = () => {
@@ -24,11 +26,11 @@ const ItemCount = ({ stock, data }) => {
 
   return (
     <div className="contador">
-      <button onClick={contador} className="menos botonContador">
+      <button onClick={contadorResta} className="menos botonContador">
         -
       </button>
       <label>{cantidad}</label>
-      <button onClick={() => contador(stock)} className="mas botonContador">
+      <button onClick={() => contadorSuma(stock)} className="mas botonContador">
         +
       </button>
       <button onClick={functionTrigger}>Añadir al carrito</button>
