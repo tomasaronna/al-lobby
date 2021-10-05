@@ -1,6 +1,7 @@
-import React, { useState, createContext } from "react";
+import React, { useState, createContext, useContext } from "react";
 
-export const cartContext = createContext();
+export const CartContext = createContext();
+export const useCartContext = () => useContext(CartContext);
 
 export const GameProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
@@ -38,10 +39,17 @@ export const GameProvider = ({ children }) => {
   };
 
   return (
-    <cartContext.Provider
-      value={{ addGame, removeGame, cart, setCart, setCartQty, cartQty }}
+    <CartContext.Provider
+      value={{
+        addGame,
+        removeGame,
+        cart,
+        setCart,
+        setCartQty,
+        cartQty,
+      }}
     >
       {children}
-    </cartContext.Provider>
+    </CartContext.Provider>
   );
 };
