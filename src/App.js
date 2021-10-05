@@ -6,8 +6,10 @@ import Inicio from "./components/Views/Inicio";
 import AcercaDe from "./components/Views/Acerca-de";
 import Contacto from "./components/Views/Contacto";
 import ItemDetail from "./components/Views/itemDetail/itemDetail";
-import cartWidget from "./components/Views/cartWidget/cartWidget";
-import { GameProvider } from "./components/cartContext/cartContext";
+import CartWidget from "./components/Views/CartWidget/CartWidget";
+import { GameProvider } from "./components/cartContext/CartContext";
+import BuyerInfo from "./components/Views/buyerInfo/buyerInfo";
+import BuyConfirmation from "./components/Views/BuyConfirmation/buyConfirmation";
 
 const App = () => {
   return (
@@ -20,7 +22,9 @@ const App = () => {
             <Route path="/acerca-de" component={AcercaDe} />
             <Route path="/contacto" component={Contacto} />
             <Route path="/detalle/:id" component={ItemDetail} />
-            <Route path="/carrito" component={cartWidget} />
+            <Route path="/carrito" component={CartWidget} />
+            <Route path="/datos-del-usuario" component={BuyerInfo} />
+            <Route path="/compra-realizada" component={BuyConfirmation} />
             <section className="recomendados">
               <ItemListContainer />
             </section>
