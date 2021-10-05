@@ -1,0 +1,21 @@
+form,
+select,
+input,
+option {
+  color: black;
+  margin: 1rem;
+}
+
+.card {
+  background-color: transparent;
+  color: black;
+  width: 10rem;
+}
+
+#cardName {
+  width: 16rem;
+}
+
+.confirm {
+  color: black;
+}
