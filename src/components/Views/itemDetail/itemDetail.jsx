@@ -25,7 +25,6 @@ const ItemDetail = () => {
   useEffect(() => {
     getDetail();
   }, [id]);
-  console.log("DATA", selectedGame.stock);
   return (
     <>
       <div className="main">
