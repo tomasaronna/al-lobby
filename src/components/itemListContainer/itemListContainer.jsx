@@ -5,7 +5,6 @@ import db from "../Firebase/Firebase";
 
 const ItemListContainer = () => {
   const [juegos, setJuegos] = useState([]);
-  console.log(juegos);
   const data = [];
   const getDatos = async () => {
     const datos = query(collection(db, "games"));
