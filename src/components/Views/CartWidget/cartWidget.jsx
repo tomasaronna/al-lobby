@@ -1,10 +1,11 @@
-import React, { useContext } from "react";
-import { cartContext } from "../../cartContext/cartContext";
+import React from "react";
+import { useCartContext } from "../../cartContext/CartContext";
+import { Link } from "react-router-dom";
 import "./cartWidget.css";
 
 const CartWidget = () => {
-  const { cart, cartQty } = useContext(cartContext);
-  console.log("CART", cart);
+  const { cart, cartQty, removeGame } = useCartContext();
+
   return (
     <>
       {cart.map((carrito) => {
@@ -15,8 +16,13 @@ const CartWidget = () => {
               <h3>{carrito.platform}</h3>
               <h3>{cartQty}</h3>
               <h2>{carrito.price}</h2>
+              <button className="quitarCarrito" onClick={removeGame}>
+                Quitar del carrito
+              </button>
             </div>
-            <button className="finalizarCompra">Finalizar compra</button>
+            <Link to="/datos-del-usuario">
+              <button className="finalizarCompra">Finalizar compra</button>
+            </Link>
           </>
         );
       })}
