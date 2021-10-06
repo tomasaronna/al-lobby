@@ -1,4 +1,8 @@
 import React, { useState, createContext, useContext } from "react";
+import { query, collection, getDocs } from "firebase/firestore";
+import db from "../Firebase/Firebase";
+import { useParams } from "react-router";
+import CardItem from "../CardItem/CardItem";
 
 export const CartContext = createContext();
 export const useCartContext = () => useContext(CartContext);
@@ -38,6 +42,24 @@ export const GameProvider = ({ children }) => {
     }
   };
 
+  const [generos, setGeneros] = useState([]);
+  const { genre } = useParams();
+
+  const gameFilter = async () => {
+    const datos = query(collection(db, "games").where("genre", "==", "rol"));
+    const info = [];
+    const querySnapshot = await getDocs(datos);
+    querySnapshot.forEach((datos) => {
+      info.push({ ...datos.data(), id: datos.id });
+    });
+    info.forEach((game) => {
+      if (game.genre === genre) {
+        setGeneros(info);
+        return <CardItem />;
+      }
+    });
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -47,6 +69,8 @@ export const GameProvider = ({ children }) => {
         setCart,
         setCartQty,
         cartQty,
+        gameFilter,
+        generos,
       }}
     >
       {children}
