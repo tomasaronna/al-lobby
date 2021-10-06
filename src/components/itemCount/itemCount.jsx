@@ -1,11 +1,11 @@
-import React, { useState, useContext } from "react";
-import { cartContext } from "../cartContext/cartContext";
+import React, { useState } from "react";
+import { useCartContext } from "../cartContext/CartContext";
 import "./itemCount.css";
 
 const ItemCount = ({ stock, data }) => {
   var [cantidad, setCantidad] = useState(0);
-  const { addGame } = useContext(cartContext);
-  const { setCartQty } = useContext(cartContext);
+  const { addGame } = useCartContext();
+  const { setCartQty } = useCartContext();
 
   const contadorSuma = (stock) => {
     if (cantidad < stock) {
@@ -33,7 +33,9 @@ const ItemCount = ({ stock, data }) => {
       <button onClick={() => contadorSuma(stock)} className="mas botonContador">
         +
       </button>
-      <button onClick={functionTrigger}>Añadir al carrito</button>
+      <button className="addCart" onClick={functionTrigger}>
+        Añadir al carrito
+      </button>
     </div>
   );
 };
