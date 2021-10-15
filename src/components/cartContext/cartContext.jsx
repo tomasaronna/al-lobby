@@ -7,7 +7,7 @@ import CardItem from "../CardItem/CardItem";
 export const CartContext = createContext();
 export const useCartContext = () => useContext(CartContext);
 
-export const GameProvider = ({ children }) => {
+export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const [cartQty, setCartQty] = useState();
 
