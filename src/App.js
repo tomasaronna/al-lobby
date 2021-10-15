@@ -7,14 +7,14 @@ import AcercaDe from "./components/Views/Acerca-de";
 import Contacto from "./components/Views/Contacto";
 import ItemDetail from "./components/Views/itemDetail/itemDetail";
 import CartWidget from "./components/Views/CartWidget/CartWidget";
-import { GameProvider } from "./components/cartContext/CartContext";
+import { CartProvider } from "./components/cartContext/CartContext";
 import BuyerInfo from "./components/Views/buyerInfo/buyerInfo";
 import BuyConfirmation from "./components/Views/BuyConfirmation/buyConfirmation";
 
 const App = () => {
   return (
     <Router>
-      <GameProvider>
+      <CartProvider>
         <div className="body">
           <NavBar />
           <Switch>
@@ -30,7 +30,7 @@ const App = () => {
             </section>
           </Switch>
         </div>
-      </GameProvider>
+      </CartProvider>
     </Router>
   );
 };
