@@ -11,35 +11,24 @@ export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const [cartQty, setCartQty] = useState();
 
-  const addGame = (title, platform, qty, price) => {
-    const existingGame = cart.findIndex((game) => game.title === title);
+  const addGame = (data, qty) => {
+    const existingGame = cart.findIndex((game) => game.id === data.id);
     if (existingGame >= 0) {
-      cart[existingGame] = {
-        ...cart[existingGame],
-        qty: cart[existingGame].qty + qty,
-      };
+      setCart(
+        cart.map((game, index) => {
+          if (index === existingGame) {
+            return { ...cart[existingGame], qty: cart[existingGame].qty + qty };
+          }
+          return game;
+        })
+      );
     } else {
-      setCart([
-        ...cart,
-        {
-          title: title,
-          platform: platform,
-          qty: qty,
-          price: price,
-        },
-      ]);
+      setCart([...cart, { ...data, qty }]);
     }
   };
 
-  const removeGame = (gameInCart) => {
-    const existingGame = cart.findIndex(
-      (game) => game.title === gameInCart.title
-    );
-    const cartCopy = Array.from(cart);
-    if (existingGame >= 0) {
-      cartCopy.splice(existingGame, 1);
-      setCart(cartCopy);
-    }
+  const removeGame = (gameId) => {
+    setCart(cart.filter((game) => game.id !== gameId));
   };
 
   const [generos, setGeneros] = useState([]);
