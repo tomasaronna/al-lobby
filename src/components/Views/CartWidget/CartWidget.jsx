@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./cartWidget.css";
 
 const CartWidget = () => {
-  const { cart, cartQty, removeGame } = useCartContext();
+  const { cart, removeGame } = useCartContext();
 
   return (
     <>
@@ -14,18 +14,21 @@ const CartWidget = () => {
             <div className="detalle">
               <h1>{carrito.title}</h1>
               <h3>{carrito.platform}</h3>
-              <h3>{cartQty}</h3>
+              <h3>{carrito.qty}</h3>
               <h2>{carrito.price}</h2>
-              <button className="quitarCarrito" onClick={removeGame}>
+              <button
+                className="quitarCarrito"
+                onClick={() => removeGame(carrito.id)}
+              >
                 Quitar del carrito
               </button>
             </div>
-            <Link to="/datos-del-usuario">
-              <button className="finalizarCompra">Finalizar compra</button>
-            </Link>
           </>
         );
       })}
+      <Link to="/datos-del-usuario">
+        <button className="finalizarCompra">Finalizar compra</button>
+      </Link>
     </>
   );
 };
